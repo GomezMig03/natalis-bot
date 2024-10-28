@@ -1,0 +1,11 @@
+{
+  "channels": [''],
+  "roles": [''],
+  "birthdays": [
+    {"name": "example", "month": 1, "day": 1},
+    {"name": "another", "month": 12, "day": 31}
+  ],
+  "lastSeparator": "and",
+  "singular": "%roles% It's %names%'s birtday today! Give them some love!",
+  "plural": "%roles% Today is a great day for %names%. It's their birthday! Go and show them some love!"
+}

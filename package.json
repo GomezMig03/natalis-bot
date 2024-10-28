@@ -1,0 +1,15 @@
+{
+  "name": "natalis-bot",
+  "version": "1.0.0",
+  "description": "A self-hosted discord bot to remember birthdays",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Miguel Gómez",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5"
+  }
+}
