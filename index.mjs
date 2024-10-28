@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 import Discord, { Events } from "discord.js"
-import config from './config.json'
+import config from './config.json' assert { type: 'json' }
 
 dotenv.config()
 
@@ -10,22 +10,28 @@ client.once(Events.ClientReady, _ => {
 	console.log('Client is ready...')
 
 	const channels = config.channels
-	const roles = config.roles
 
 	const today = new Date
-	const day = today.getDay()
+	const day = today.getDate()
 	const month = today.getMonth()
 
-	const birthdays = getBirthdays(day, month)
+	let isPlural = false
+	const birthdays = getBirthdays(day, month + 1)
 
-	channels.forEach((chan) => {
+	if (birthdays[0] === undefined) return
+	if (birthdays[1] !== undefined) isPlural = true
 
+	channels.forEach((chanName) => {
+		const chan = client.channels.cache.get(chanName)
+
+		chan.send(replaceVariables(birthdays, isPlural)).catch((e) => console.log(e))
 	})
 })
 
 
 const getBirthdays = (day, month) => {
 	const people = config.birthdays
+
 	return people.filter(person => person.month === month && person.day === day).map(person => {
 		return person.name
 	})
@@ -40,13 +46,18 @@ const replaceVariables = (names, isPlural) => {
 	if (isPlural) {
 		return config.plural.replace(/%(\w+)%/g, (match, key) => replacements[key] || match)
 	}
+
+
+	return config.singular.replace(/%(\w+)%/g, (match, key) => replacements[key] || match)
 }
 
 const rolesToString = (roles) => {
 	let result = ''
 	roles.forEach((role) => {
-		result += `${role}`
+		result += `<@&${role}>`
 	})
+
+	return result
 }
 
 const getOrderedNames = (names) => {

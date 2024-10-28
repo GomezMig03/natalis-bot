@@ -1,0 +1,30 @@
+name: Scheduled Run
+
+on:
+  schedule:
+    - cron: '0 16 * * *' #This activates everyday at 16:00 UTC, you can change it and add more
+  workflow_dispatch: # Allows manual execution
+
+jobs:
+  run-scheduled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # You'll have to add your bot token as a github secret'
+      - name: Create .env file
+        run: echo "DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }}" > .env
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Start project with timeout
+        run: |
+          npm start &
+          sleep 60 # This will stop the VM after a minute, you can alter the value

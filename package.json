@@ -4,7 +4,7 @@
   "description": "A self-hosted discord bot to remember birthdays",
   "main": "index.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ."
   },
   "author": "Miguel Gómez",
   "license": "GPL-3.0",

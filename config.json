@@ -1,6 +1,6 @@
 {
-  "channels": [''],
-  "roles": [''],
+  "channels": [""],
+  "roles": [""],
   "birthdays": [
     {"name": "example", "month": 1, "day": 1},
     {"name": "another", "month": 12, "day": 31}
