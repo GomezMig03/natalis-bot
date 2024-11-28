@@ -32,6 +32,22 @@ Natalis Bot is a Discord bot designed to send birthday notifications for members
     - Roles: Specify the ID(s) of the role(s) to be mentioned in the birthday notifications.
     - Birthdays: List member names and birthdays following the provided format to ensure accurate notifications.
 
+#### Example of a config.json
+```
+{
+  "channels": ["676404642664428570", "5054535634091872758"],
+  "roles": ["1054891617226572869", "1317612856744531210"],
+  "birthdays": [
+    {"name": "Miguel", "month": 7, "day": 12},
+    {"name": "Linus", "month": 12, "day": 28},
+    {"name": "Richard", "month": 3, "day": 16}
+  ],
+  "lastSeparator": "and",
+  "singular": "%roles% It's %names%'s birtday today! Give them some love!",
+  "plural": "%roles% Today is a great day for %names%. It's their birthday! Go and show them some love!"
+}
+```
+
 2. **Deploy the Bot:** With GitHub Actions active, the bot will automatically run as per the schedule set in the workflow. If hosting elsewhere, simply deploy according to the platform's guidelines.
 
 ## Notes
