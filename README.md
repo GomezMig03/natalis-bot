@@ -58,5 +58,4 @@ Natalis Bot is a Discord bot designed to send birthday notifications for members
 
 - For additional customization or troubleshooting, consult the GitHub Actions logs and ensure all permissions are correctly set in Discord.
 - If you find a bug, please post an issue in this repo.
-- If you want to make your fork private (recommended), download the code and create a new repository instead of using GitHub’s fork feature. This approach allows you to keep your configuration private without affecting the original license.
 - Changing only config.json and not index.mjs or other source files does not require you to redistribute your modifications under the MPL 2.0 license.
