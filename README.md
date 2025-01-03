@@ -18,7 +18,11 @@ Natalis Bot is a Discord bot designed to send birthday notifications for members
     - Mention the roles for birthday notifications.
 
 2. **Fork the Repository:**
-    - Click the "Fork" button on the top-right corner of this repository to get your copy.
+    - Click the "Fork" button on the top-right corner of this repository to get your copy
+    - If you want the fork to be private, you'll have to download the repo clicking on code then Download zip or using git and pasting the following in your terminal while being on the desired directory
+      ```
+      git clone https://github.com/GomezMig03/natalis-bot.git
+      ```
 
 3. **Set Up GitHub Actions:**
     - Activate GitHub Actions on your fork.
