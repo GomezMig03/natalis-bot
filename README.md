@@ -58,5 +58,6 @@ Natalis Bot is a Discord bot designed to send birthday notifications for members
 
 - For troubleshooting, consult the GitHub Actions logs and ensure all permissions are correctly set in Discord.
 - If you find a bug, please post an issue in this repo.
-- Remember that, any changes to the code must be distributed under the MPL 2.0 license. For more details, refer to the [MPL 2.0 license section](https://github.com/GomezMig03/natalis-bot?tab=MPL-2.0-1-ov-file) or [LICENSE file](https://github.com/GomezMig03/natalis-bot/blob/main/LICENSE) in this repository.
+- Note that at least Node.js 18.20 is required, by default the github action use node.js 20.
+- Remember that any changes to the code must be distributed under the MPL 2.0 license. For more details, refer to the [MPL 2.0 license section](https://github.com/GomezMig03/natalis-bot?tab=MPL-2.0-1-ov-file) or [LICENSE file](https://github.com/GomezMig03/natalis-bot/blob/main/LICENSE) in this repository.
 - Changing only config.json and not index.mjs or other source files does not require you to redistribute your modifications under the MPL 2.0 license.
