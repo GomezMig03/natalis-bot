@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 import Discord, { Events } from "discord.js"
-import config from './config.json' assert { type: 'json' }
+import config from './config.json' with { type: 'json' }
 
 dotenv.config()
 
