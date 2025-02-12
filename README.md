@@ -1,3 +1,5 @@
+Español: [README_es.md](https://github.com/GomezMig03/natalis-bot/blob/main/README_es.md)
+
 # Natalis Bot
 
 Natalis Bot is a Discord bot designed to send birthday notifications for members of your server. It’s optimized for deployment via GitHub Actions but can also be hosted elsewhere.
