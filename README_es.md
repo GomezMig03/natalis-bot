@@ -12,13 +12,13 @@ Natalis Bot es un bot de Discord diseñado para enviar notificaciones de cumplea
 
 ### Prerequisitos
 
-1. **Crear el bot the discord:** Dirgete al [Discord Developer Portal](https://discord.com/developers) para crear tu bot e invítalo a tu servidor. Asegúrate de que tenga permisos para:
+1. **Crear el bot the discord:** Dirígete al [Discord Developer Portal](https://discord.com/developers) para crear tu bot e invítalo a tu servidor. Asegúrate de que tenga permisos para:
     - Enviar mensajes en el canal deseado.
     - Mencionar los roles para notificaciones de cumpleaños.
 
 2. **Hacer *fork* del repositorio:**
     - Haz clic en el botón "Fork" en la esquina superior derecha del repositorio para obtener tu propia copia.
-    - Si deseas que el fork sea privado, descarga el repositorio haciendo clic en "Code" > "Download ZIP", o usa Git clonándolo con el siguiente comando en tu terminal:
+    - Si deseas que el *fork* sea privado, descarga el repositorio haciendo clic en "Code" > "Download ZIP", o usa Git clonándolo con el siguiente comando en tu terminal:
       ```
       git clone https://github.com/GomezMig03/natalis-bot.git
       ```
@@ -28,7 +28,7 @@ Nota: en Open-Source, un *fork* se refiere esencialmente a una copia de un proye
 
 3. **Configura GitHub Actions:**
     - Activa GitHub Actions en tu *fork*.
-    - Agrega tu token del bot como un GitHub Secret con el nombre DISCORD_TOKEN.
+    - Agrega tu *token* del bot como un GitHub Secret con el nombre DISCORD_TOKEN.
     - (Opcional) Ajusta el horario de ejecución en el archivo de workflow si deseas personalizar la hora de verificación de cumpleaños.
 
 ### Configuración
