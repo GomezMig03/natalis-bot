@@ -34,9 +34,10 @@ Nota: en Open-Source, un *fork* se refiere esencialmente a una copia de un proye
 ### Configuración
 
 1. **Editar config.json:** Personaliza la configuración del bot según las necesidades de tu servidor:
-    - Canales: Agrega los ID(s) de los canales donde aparecerán los mensajes de cumpleaños.
-    - Roles: Especifica los ID(s) de los roles que serán mencionados en las notificaciones.
-    - Cumpleaños: Lista los nombres de los miembros y sus fechas de cumpleaños en el formato proporcionado para asegurar notificaciones precisas.
+    - Channels: Agrega los ID(s) de los canales donde aparecerán los mensajes de cumpleaños, tendrás que poner uno o más canales, separados por coma dentro del '[]'.
+    - Roles: Especifica los ID(s) de los roles que serán mencionados en las notificaciones, tendrás que poner uno o más roles, separados por coma dentro del '[]'.
+    - Birthdays: Lista los nombres de los miembros y sus fechas de cumpleaños en el formato proporcionado para asegurar notificaciones precisas.
+    - Prenotify: Te permite añadir anuncios de cumpleaños futuros, x días antes (donde x es el/los días que elijas), tendrás que poner uno o más días, separados por coma dentro del '[]'.
 
 #### Ejemplo de un config.json
 ```
@@ -50,7 +51,10 @@ Nota: en Open-Source, un *fork* se refiere esencialmente a una copia de un proye
   ],
   "lastSeparator": "y",
   "singular": "%roles% ¡Hoy es el cumple de %names%! ¡Dadles algo de amor!",
-  "plural": "%roles% Hoy es un gran da para %names%. ¡Su cumpleaños! ¡Vamos a felicitarlos!"
+  "plural": "%roles% Hoy es un gran da para %names%. ¡Su cumpleaños! ¡Vamos a felicitarlos!",
+  "prenotify_days": [7, 15, 30],
+  "prenotify_singular": "%roles% El cumpleaños de %names% es en %days% días. ¡Id preparando los regalos!",
+  "prenotify_plural": "%roles% Los cumpleaños de %names% serán en %days% días. ¡Id preparando los regalos!"
 }
 ```
 

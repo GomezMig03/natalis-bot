@@ -34,9 +34,10 @@ Natalis Bot is a Discord bot designed to send birthday notifications for members
 ### Configuration
 
 1. **Edit config.json:** Customize the bot settings according to your server’s needs.
-    - Channels: Add the ID(s) of the channel(s) where you want birthday messages to appear.
-    - Roles: Specify the ID(s) of the role(s) to be mentioned in the birthday notifications.
+    - Channels: Add the ID(s) of the channel(s) where you want birthday messages to appear, you'll have to provide one or more channels, comma separated, inside the '[]'.
+    - Roles: Specify the ID(s) of the role(s) to be mentioned in the birthday notifications, you'll have to provide one or more roles, comma separated, inside the '[]'.
     - Birthdays: List member names and birthdays following the provided format to ensure accurate notifications.
+    - Prenotify: Let's you set an announcement of a future birthday x days in advance, you'll have to provide one or more days, comma separated, inside the '[]'.
 
 #### Example of a config.json
 ```
@@ -50,7 +51,10 @@ Natalis Bot is a Discord bot designed to send birthday notifications for members
   ],
   "lastSeparator": "and",
   "singular": "%roles% It's %names%'s birtday today! Give them some love!",
-  "plural": "%roles% Today is a great day for %names%. It's their birthday! Go and show them some love!"
+  "plural": "%roles% Today is a great day for %names%. It's their birthday! Go and show them some love!",
+  "prenotify_days": [7, 15, 30],
+  "prenotify_singular": "%roles% %names%'s birthday is in %days% days. Prepare your gifts!",
+  "prenotify_plural": "%roles% %names% will have their birthdays in %days% days. Prepare your gifts!"
 }
 ```
 
