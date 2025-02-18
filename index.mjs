@@ -17,6 +17,7 @@ client.once(Events.ClientReady, _ => {
 
 	let isPlural = false
 	const birthdays = getBirthdays(day, month + 1)
+	const pre = prenotify(day)
 
 	if (birthdays[0] === undefined) return
 	if (birthdays[1] !== undefined) isPlural = true
@@ -25,9 +26,13 @@ client.once(Events.ClientReady, _ => {
 		const chan = client.channels.cache.get(chanName)
 
 		chan.send(replaceVariables(birthdays, isPlural)).catch((e) => console.log(e))
+
+		if (!pre) return
+		pre.forEach((val) => {
+			chan.send(pre).catch((e) => console.log(e))
+		})
 	})
 })
-
 
 const getBirthdays = (day, month) => {
 	const people = config.birthdays
@@ -35,6 +40,26 @@ const getBirthdays = (day, month) => {
 	return people.filter(person => person.month === month && person.day === day).map(person => {
 		return person.name
 	})
+}
+
+const prenotify = (day) => {
+	let isPlural = true
+
+	const prenotify = config.prenotify_days
+	const dat = new Date() 
+	const birthdays = []
+
+	prenotify.forEach((val) => {
+		dat.setDate(day + val)
+		const people = getBirthdays(dat.getDate(), dat.getMonth() + 1)
+		if (people[0] === undefined) return
+		if (people[1] === undefined) isPlural = false
+
+		birthdays.push(replacePrenotify(people, isPlural, val))
+	})
+
+	if (birthdays[0] === undefined) return false
+	return birthdays
 }
 
 const replaceVariables = (names, isPlural) => {
@@ -47,8 +72,21 @@ const replaceVariables = (names, isPlural) => {
 		return config.plural.replace(/%(\w+)%/g, (match, key) => replacements[key] || match)
 	}
 
-
 	return config.singular.replace(/%(\w+)%/g, (match, key) => replacements[key] || match)
+}
+
+const replacePrenotify = (names, isPlural, day) => {
+	const replacements = {
+		roles: rolesToString(config.roles),
+		names: getOrderedNames(names),
+		days: day
+	}
+
+	if (isPlural) {
+		return config.prenotify_plural.replace(/%(\w+)%/g, (match, key) => replacements[key] || match)
+	}
+
+	return config.prenotify_singular.replace(/%(\w+)%/g, (match, key) => replacements[key] || match)
 }
 
 const rolesToString = (roles) => {

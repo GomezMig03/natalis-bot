@@ -7,5 +7,8 @@
   ],
   "lastSeparator": "and",
   "singular": "%roles% It's %names%'s birtday today! Give them some love!",
-  "plural": "%roles% Today is a great day for %names%. It's their birthday! Go and show them some love!"
+  "plural": "%roles% Today is a great day for %names%. It's their birthday! Go and show them some love!",
+  "prenotify_days": [],
+  "prenotify_singular": "%roles% %names%'s birthday is in %days% days. Prepare your gifts!",
+  "prenotify_plural": "%roles% %names% will have their birthdays in %days% days. Prepare your gifts!"
 }
