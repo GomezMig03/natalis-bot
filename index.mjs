@@ -2,8 +2,6 @@ process.loadEnvFile()
 import Discord, { Events } from "discord.js"
 import config from './config.json' with { type: 'json' }
 
-dotenv.config()
-
 const client = new Discord.Client({ intents: ["Guilds", "GuildMessages"] })
 
 client.once(Events.ClientReady, _ => {
