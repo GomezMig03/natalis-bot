@@ -9,7 +9,6 @@
   "author": "Miguel Gómez",
   "license": "MPL-2.0",
   "dependencies": {
-    "discord.js": "^14.18.0",
-    "dotenv": "^16.4.5"
+    "discord.js": "^14.18.0"
   }
 }

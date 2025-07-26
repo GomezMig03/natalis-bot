@@ -1,4 +1,4 @@
-import dotenv from 'dotenv'
+process.loadEnvFile()
 import Discord, { Events } from "discord.js"
 import config from './config.json' with { type: 'json' }
 
